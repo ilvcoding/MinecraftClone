@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        { // Compile and run
+            "label": "Compile and Run",
+            "type": "shell",
+            "command": "gcc -I include -L lib -o main.exe main.c include/cmixer/cmixer.c include/glad/glad.c -lSDL2main -lSDL2 -lglfw3 -lgdi32 -luser32 -lkernel32 -lglfw3dll -lwinmm -Wall -O1; ./main.exe",
+            "presentation": {"echo": true, "reveal": "always", "focus": false, "panel": "shared", "showReuseMessage": false, "clear": true},
+        },
+        { // Skip compiling and run what was allready been compiled
+            "label": "Run",
+            "type": "shell",
+            "command": "./main.exe",
+            "presentation": {"echo": true, "reveal": "always", "focus": false, "panel": "shared", "showReuseMessage": false, "clear": true},
+        },
+        { // Compile the code but don't run it
+            "label": "Compile",
+            "type": "shell",
+            "command": "gcc -I include -L lib -o main.exe main.c include/cmixer/cmixer.c include/glad/glad.c -lSDL2main -lSDL2 -lglfw3 -lgdi32 -luser32 -lkernel32 -lglfw3dll -lwinmm -Wall -O1",
+            "presentation": {"echo": true, "reveal": "always", "focus": false, "panel": "shared", "showReuseMessage": false, "clear": true},
+        }
+    ]
+}
